@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>南昌理工学院2020年普通高校专升本报名系统</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/asserts/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/asserts/css/dashboard.css}" rel="stylesheet">
+    <style type="text/css">
+        /* Chart.js */
+
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+
+    <style>
+        .la{
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+<!--<div th:replace="~{bar/bar::top}"></div>-->
+<div class="container-fluid">
+    <div class="box">
+        <div class="row">
+
+<!--        <div th:replace="~{bar/bar::side(active='res')}"></div>-->
+            <div align="center" style="margin: auto">
+                <main>
+            <div class="table-responsive" >
+                <div>
+                    <h1 style="margin-top: 90px">南昌理工学院2020年普通高校专升本</h1>
+                    <h2 >考试成绩单</h2>
+                    <p style="margin-top: 35px;margin-left: 15%" align="left"><span class="la" style="margin-left: 35px">准考证号&nbsp;&nbsp;: </span><span class="la" style="margin-right: 20px" th:text="${ach.zkzh}"></span></p>
+                    <p align="left" style="margin-left: 15%"><span class="la" style="margin-left: 35px">姓名&nbsp;&nbsp;: </span><span class="la" style="margin-right: 20px" th:text="${ach.name}"></span></p>
+                    <p align="left" style="margin-left: 15%"><span class="la" style="margin-left: 35px">性别&nbsp;&nbsp;: </span><span class="la" style="margin-right: 10px" th:text="${ach.sex}"></span></p>
+                    <p align="left" style="margin-left: 15%"><span class="la" style="margin-left: 35px">身份证号&nbsp;&nbsp;: </span><span class="la" style="margin-right: 20px" th:text="${ach.sfzhm}"></span></p>
+                    <p style="margin-bottom: 60px;;margin-left: 15%" align="left"><span class="la" style="margin-left: 35px">报考专业&nbsp;&nbsp;: </span><span class="la" style="margin-right: 20px" th:text="${ach.bkzy}"></span></p>
+                    <div style="width: 60%">
+                    <table class="table table-striped table-sm">
+                        <thead >
+                        <tr>
+                            <th style="padding-left: 35px;font-size: 18px">科目名称</th>
+                            <th style="font-size: 18px">成绩</th>
+                        </tr>
+                        </thead>
+                        <tbody >
+                        <tr>
+                            <td style="padding-left: 35px" th:text="${ach.kc1}"></td>
+                            <td th:text="${ach.kc1fs}"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 35px" th:text="${ach.kc2}"></td>
+                            <td th:text="${ach.kc2fs}"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 35px" th:text="${ach.kc3}"></td>
+                            <td th:text="${ach.kc3fs}"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 35px">总分</td>
+                            <td th:text="${ach.kc1fs}+${ach.kc2fs}+${ach.kc3fs}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                        <p style="margin-top: 60px;font-size: 30px;margin-left: 50%">南昌理工学院教务处</p>
+
+                </div>
+            </div>
+        </main>
+            </div>
+    </div>
+    </div>
+</div>
+<div id="pr"><h2>点击打印</h2></div>
+</body>
+<script>
+
+    function $(selector){
+        return document.querySelector(selector);
+    }
+    //获取整个页面
+    $("#pr").onclick =function(){
+
+        window.print();
+    }
+
+    /* 实现打印全部页面（也可以打印局部页面 - 看需求） ----
+          我是只打印boby里边的内容
+          获取我们定义的id
+       */
+    $("#pr").onclick =function(){
+        var oldHtml = $("body").innerHTML;
+        var printbox = $(".box").innerHTML;
+        $("body").innerHTML = printbox;
+        window.print();
+        $("body").innerHTML = oldHtml;
+    }
+</script>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>准考证</title>
+    <style>
+        *{
+            list-style: none;
+        }
+        .biao{
+            width: 800px;
+            height: 1080px;
+            border: 1px solid #000000;
+            /*position: absolute;*/
+            /*margin-left: 28%;*/
+            margin: auto;
+        }
+        p{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            font-family: 华文楷体;
+        }
+        h1{
+            text-align: center;
+            font-family: 华文楷体;
+        }
+        .d11{
+            position:absolute;
+            /*margin-left: 163px;*/
+            margin-left: 150px;
+            width: 400px;
+            height: 500px;
+        }
+        .jianju{
+            padding: 10px;
+        }
+        .d11a{
+            position: relative;
+        }
+        .kuang4{
+            position: absolute;
+            border: 1px solid #000000;
+            width: 100px;
+            margin-top: -22px;
+            margin-left: 74px;
+        }
+        .kuang2{
+             position: absolute;
+             border: 1px solid #000000;
+             width: 100px;
+             margin-top: -22px;
+             margin-left: 43px;
+         }
+        .kuang5{
+             position: absolute;
+             border: 1px solid #000000;
+             width: 100px;
+             margin-top: -22px;
+             margin-left: 90px;
+         }
+        .kuang3{
+            position: absolute;
+            border: 1px solid #000000;
+            width: 100px;
+            margin-top: -22px;
+            margin-left: 60px;
+        }
+        .kuang{
+            position: absolute;
+            border: 1px solid #000000;
+            width: 45px;
+            margin-top: -22px;
+            margin-left: 74px;
+        }
+        .d11b{
+            position: relative;
+            margin-left: 170px;
+            margin-top: -41px;
+        }
+        .d11c{
+            position: relative;
+            margin-left: 149px;
+            margin-top: -45px;
+        }
+        .d2 {
+            width: 490px;
+            height: 200px;
+            position: relative;
+            border: 1px solid #000000;
+        }
+        .bian{
+            border: 1px solid #000000;
+            width: 164px;
+            height: 80px;
+            position: absolute;
+        }
+        .d21p{
+            margin-left: -1px;
+        }
+        .d22p{
+            margin-left: 164px;
+            /*width: 150px;*/
+
+         }
+        .d23p{
+            margin-left: 329px;
+            width: 160px;
+        }
+        .bian1{
+            border: 1px solid #000000;
+            width: 164px;
+            height: 65px;
+            position: absolute;
+        }
+        .d31p{
+            margin-top: 81px;
+            margin-left: -1px;
+        }
+        .d32p{
+            margin-top: 81px;
+            margin-left: 164px;
+        }
+        .d33p{
+            margin-top: 81px;
+            margin-left: 329px;
+            width: 160px;
+        }
+        .d31p1{
+            margin: auto;
+            position: absolute;
+            width: 120px;
+            align-content: center;
+        }
+        .zp1{
+            width: 60px;
+            height: 100px;
+            position: absolute;
+            margin-left: 400px;
+            margin-top: -400px;
+        }
+        .zp1p{
+            width: 130px;
+            height: 165px;
+            position: absolute;
+            background-color: #999999;
+        }
+        .zp1p1{
+            position: absolute;
+            margin-top:170px;
+            width: 100px;
+        }
+        .zy{
+            width: 680px;
+            height: 450px;
+            position: relative;
+            /*border: 1px solid #000000;*/
+            margin-top: 10px;
+            margin-left: -100px;
+        }
+    </style>
+</head>
+<body>
+<div class="biao">
+    <div class="box">
+        <div class="d1">
+        <h1>南昌理工学院2020年普通高校专升本考试</h1>
+        <h2>准考证</h2>
+        <div class="d11">
+            <div class="d11a jianju" style="font-size: 15px">准考证号：<label th:text="${stu.getKid()}"/></div>
+            <div class="d11b jianju" style="font-size: 15px">姓名：<label th:text="${stu.getSname()}"/></div>
+            <div class="d11a jianju" style="margin-bottom: 15px ;font-size: 15px" >性别：<label th:text="${stu.getGender()}"/></div>
+            <div class="d11c" style="font-size: 15px">报考专业：<label th:text="${stu.getGmajor()}"/></div>
+            <div class="d11a jianju" style="font-size: 15px; margin-top: 8px">身份证号码：<label th:text="${stu.getDid()}"/></div>
+            <div class="d11a jianju" style="font-size: 15px">考试地点：<label>南昌理工学院英雄校区(英雄大道901号)</label></div>
+<!--            <div class="d11a jianju">考场号：<label th:text="${stu.getPid()}"/></div>-->
+<!--            <div class="d11b jianju">座位号：<label th:text="${stu.getSeat()}"/></div>-->
+<!--            <div class="d11a jianju">考试地点：<label th:text="${stu.getGp()}"/></div>-->
+            <div class="d2">
+                <table border="1" style="margin: auto"  cellspacing="0">
+                    <tr height="57">
+                        <th>考试时间7月4日</th>
+                        <th width="135">考试科目</th>
+                        <th>考场号</th>
+                        <th>座位号</th>
+                        <th width="120">考试地点</th>
+                    </tr>
+                    <tr height="47">
+                        <td>9:00-11:00</td>
+                        <td><label th:text="${stu.getCid1()}"/></td>
+                        <td><label th:text="${stu.getPid1()}"/></td>
+                        <td><label th:text="${stu.getSeat1()}"/></td>
+                        <td><label th:text="${stu.getPid1()}>=86?'B栋教学楼':'新教学楼'"/></td>
+                    </tr>
+                    <tr height="47">
+                        <td>13:00-15:00</td>
+                        <td><label th:text="${stu.getCid2()}"/></td>
+                        <td><label th:text="${stu.getPid2()}"/></td>
+                        <td><label th:text="${stu.getSeat2()}"/></td>
+                        <td><label th:text="${stu.getPid2()}>=86?'B栋教学楼':'新教学楼'"/></td>
+                    </tr>
+                    <tr height="47">
+                        <td>15:30-17:30</td>
+                        <td><label th:text="${stu.getCid3()}"/></td>
+                        <td><label th:text="${stu.getPid2()}"/></td>
+                        <td><label th:text="${stu.getSeat2()}"/></td>
+                        <td><label th:text="${stu.getPid2()}>=86?'B栋教学楼':'新教学楼'"/></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="zp1">
+                <div class="zp1p"><img th:src="@{${zp}}" alt="照片" width="140" height="170" align="center"></div>
+<!--                <div class="zp1p1">报名序列：<label th:text="${stu.getSid()}"/></div>-->
+            </div>
+            <div class="zy">
+                <h1 style="float: left ;font-size: 20px ; font-family: 楷体 ;line-height: 1px;">防疫安全注意事项：</h1>
+                <br>
+                <ul style="font-size: 13px">
+                    <li >1、赴考前确保家庭成员中无确诊、疑似病例和无症状感染者，无近14天内有境外、中高风险及重点地区旅居史，本人身体无不适，若出现有发热（体温达到37.3℃及以上）、咳嗽、乏力、呼吸急促、腹泻等症状，请及时就医，不能参加考试。并准备好口罩等个人防护用品，有条件时可随身携带速干手消毒剂;</li>
+                    <li>2、赴考途中不要去其他公共场所，尽量避免接触其他人员，应直达目的地;</li>
+                    <li>3、由于疫情防控要求，车辆和家长不得进入我校，考试当天可能出现交通拥堵，请考生合理安排好赴考时间，避免因为交通拥堵耽误考试。乘坐公共交通工具的考生，要全程正确佩戴口罩，减少接触交通工具的公共物品和部位;</li>
+                    <li>4、积极配合我校疫情防控工作，按要求扫“昌通码”验证和接受体温检测。考生体温检测发热（体温达到37.3℃及以上），由引导员带到隔离点，经由医务人员重测体温仍显示发热者，不得入校考试，经家长同意，由学院派专人专车送至医疗机构发热门诊诊治;</li>
+                    <li>5、注意个人卫生，避免用手接触口、眼、鼻，打喷嚏或咳嗽时要用纸张、手帕或者衣服肘部遮住口鼻，以免飞沫、分泌物扩散;</li>
+                    <li>6、考试全程正确佩戴口罩，与他人保持1米以上距离，不聚集，避免与他人正面相对。期间身体有任何不适，需通知学校工作人员，不得隐瞒。</li>
+                </ul>
+                <h1 style="float: left ;font-size: 20px ; font-family: 楷体 ;line-height: 1px;">注意事项:</h1>
+                <br>
+                <ul style="font-size: 13px">
+                    <li>1、此证须妥善保管。考生凭准考证、有效身份证及报名表（省考试院报名系统打印）进入考场，两证缺一不可。进入考场后对号入座。</li>
+                    <li>2、考生提前30分钟进入考场。开考15分钟后不得入场；中途不得离场，不得提前交卷。</li>
+                    <li>3、考试开考铃响方可答卷；考试结束铃响，应立即停止答卷。不准将试卷，答题卡，草稿纸带出考场。</li>
+                    <li>4、遵守考试纪律，不得有夹带、传递、抄袭、换卷、代考、抢答、拖答等违纪行为。凡违纪、舞弊者一律按《国家教育考试违规办法》（教育部令第33号）严肃查处。</li>
+                    <li>5、选择题须使用2B铅笔规范填涂；非选择题须使用0.5毫米中性签字笔书写，字体工整、笔迹清楚。</li>
+                    <li>6、信息查询：南昌理工学院教务处：http://jwc.nclg.com.cn</li>
+                </ul>
+                <div >
+                    <p style="font-size: 15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;咨询电话：教务处0791-82137568</p>
+                    <p style="font-size: 15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;招生办0791-83891958</p>
+                    <p style="font-size: 15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;计划管理录取中心0791-82050101</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<!--<a align="center" href="/collect/return">返回主页</a>-->
+<div id="pr"><h2>点击打印</h2></div>
+</body>
+<script>
+
+    function $(selector){
+        return document.querySelector(selector);
+    }
+    //获取整个页面
+    $("#pr").onclick =function(){
+
+        window.print();
+    }
+
+    /* 实现打印全部页面（也可以打印局部页面 - 看需求） ----
+          我是只打印boby里边的内容
+          获取我们定义的id
+       */
+    $("#pr").onclick =function(){
+        var oldHtml = $("body").innerHTML;
+        var printbox = $(".box").innerHTML;
+        $("body").innerHTML = printbox;
+        window.print();
+        $("body").innerHTML = oldHtml;
+    }
+</script>
+</html>
